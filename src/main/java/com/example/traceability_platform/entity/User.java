@@ -12,6 +12,8 @@ import lombok.Data;
 public class User {
     @TableId(type = IdType.AUTO)
     private Integer id;
+    @TableField("company_id")
+    private Integer companyId;    //-1  表示没有公司
     private Integer sex; //1：男 0：女
     private String email;
     private String password;
@@ -19,4 +21,6 @@ public class User {
     private String phoneNum;
     @TableField("private_key")
     private String privateKey; //私钥
+    @TableField("public_key")
+    private String publicKey;//公钥
 }

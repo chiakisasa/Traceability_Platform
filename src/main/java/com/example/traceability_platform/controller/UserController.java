@@ -35,6 +35,8 @@ public class UserController {
 
         //生成私钥
         String privateKey = UUID.randomUUID().toString();
+        //生成公钥
+        String publicKey = UUID.randomUUID().toString();
 
         User user = new User();
         user.setEmail(email);
@@ -42,7 +44,9 @@ public class UserController {
         user.setPhoneNum(phoneNum);
         user.setSex(sex);
         user.setPrivateKey(privateKey);
-
+        user.setPublicKey(publicKey);
+        //默认没有公司
+        user.setCompanyId(-1);
         return userService.saveUser(user);
 
 
